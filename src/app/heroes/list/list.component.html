@@ -1,0 +1,23 @@
+<p>Productos</p>
+<div *ngIf="productoBorrado; else NoBorrado">
+  <h3> Producto Borrado: <small class="text-danger">{{ productoBorrado }}</small></h3>
+</div>
+<ng-template #NoBorrado>
+  <h3><small>No se borró producto.</small></h3>
+</ng-template>
+
+<button
+    (click)="borrarProducto()"
+    class="btn btn-outline-danger mx-2">
+    Borrar producto
+</button>
+
+
+<hr>
+<ul>
+  <li
+    class="mt-2 list-group"
+    *ngFor="let item of nombreProductos">
+    {{item}}
+  </li>
+</ul>
